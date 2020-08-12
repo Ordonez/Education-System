@@ -14,32 +14,34 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    //adding users
+    //post api for adding users
     @PostMapping("/addUsers")
     public Users addUsers (@RequestBody Users users) {
         return service.saveUsers(users);
     }
+    //post api for adding a list of multiple users
     @PostMapping("/addMultipleUsers")
     public List<Users> addMultipleUsers(@RequestBody List<Users> multipleUsers) {
         return service.saveUsers(multipleUsers);
     }
 
-    @GetMapping("/ListUsers")
+    //api to list all users
+    @GetMapping("/allUsers")
     public List<Users> findAllUsers() {
         return service.getUsers();
     }
 
-    @GetMapping("/Users/{id}")
+    @GetMapping("/usersById/{id}")
     public Users findUsersById(@PathVariable int id) {
         return service.getUsersById(id);
     }
 
-    @GetMapping("/Users/{name}")
+    @GetMapping("/usersByName/{name}")
     public Users findUsersByNmae(@PathVariable String name) {
         return service.getUsersByName(name);
     }
 
-    @PutMapping ("/UpdateUsers")
+    @PutMapping ("/updateUsers")
     public Users updateUsers(@RequestBody Users users){
         return service.updateUser(users);
 
