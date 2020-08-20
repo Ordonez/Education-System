@@ -31,22 +31,26 @@ public class UserController {
         return service.getUsers();
     }
 
+    //fetching users by id
     @GetMapping("/usersById/{id}")
     public Users findUsersById(@PathVariable int id) {
         return service.getUsersById(id);
     }
 
+    //fetching users by name
     @GetMapping("/usersByName/{name}")
-    public Users findUsersByNmae(@PathVariable String name) {
+    public Users findUsersByName(@PathVariable String name) {
         return service.getUsersByName(name);
     }
 
+    //Updating users 
     @PutMapping ("/updateUsers")
     public Users updateUsers(@RequestBody Users users){
         return service.updateUser(users);
 
     }
-
+    
+    //Deleting users by using userid
     @DeleteMapping("/delete/{id}")
     public String deleteUsers(@PathVariable int id) {
         return service.deleteUser(id);
