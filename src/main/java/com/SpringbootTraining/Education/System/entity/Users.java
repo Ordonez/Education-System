@@ -14,16 +14,19 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "student_users")
+@Table(name = "student_users") //table name in mySQL EducationSystemDB 
 
 public class Users {
 
     @Id
     @GeneratedValue
+
     private int id;
     private String name;
     private String classification;
 
+    
+    //setting getters and setters
     public int getId() {
         return id;
     }

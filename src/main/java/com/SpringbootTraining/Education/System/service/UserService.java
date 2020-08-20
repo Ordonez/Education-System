@@ -21,7 +21,7 @@ public class UserService {
         return repository.saveAll(users);
     }
 
-    //Creating Get method to fetch users from database
+    //Creating Get methods to fetch users from database
     public List <Users> getUsers() {
         return repository.findAll();
     }
